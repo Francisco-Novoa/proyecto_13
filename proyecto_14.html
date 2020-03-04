@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class=container>
+        <form Method="POST">
+            <div class=row>
+                <div class=col>
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>Payment Form Example</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class=container>
+                                <div class=row>
+                                    <div class="col">
+                                        <div class="alert alert-danger" role="alert" id="alerts"> Some fields are
+                                            missing </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label for="#card">Card #</label>
+                                            <input type="text" class="form-control" placeholder="XXXXXXXXXX" id=card
+                                                name=card>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <label for="#CVC">CVC#</label>
+                                            <input type="text" class="form-control" placeholder="CVC" id=CVC card=CVC>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="#amount">Amount</label>
+                                            <input type="text" class="form-control" placeholder="Amount" id="amount"
+                                                name=amount>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="#firstname">First Name</label>
+                                            <input type="text" class="form-control" placeholder="First Name"
+                                                id=firstname name=firstname>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="#lastname">Last Name</label>
+                                            <input type="text" class="form-control" placeholder="Last Name" id=lastname
+                                                name=lastname>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="#city">City</label>
+                                            <input type="text" class="form-control" placeholder="City" id="city"
+                                                name=city>
+                                        </div>
+                                    </div>
+                                    <div class=col-3>
+                                        <div class="form-group">
+                                            <label class="label" for="#preference">Preference</label>
+                                            <select class="custom-select" id="preference" name="preference">
+                                                <option selected value="0">Choose...</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class=col-3>
+                                        <div class="form-group">
+                                            <label for="#postcode">Postalcode</label>
+                                            <input type="text" class="form-control" placeholder="PostalCode"
+                                                id="postcode" name=postcode>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=col-12>
+                                        <p id=textoguia>We accept:</p>
+                                    </div>
+                                </div>
+                                <div class=row>
+                                    <div class="col-6">
+                                        <div class="col-10 bg-secondary">
+                                            <div class="form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gridRadios"
+                                                    id="mastercardcheck" value="mastercard" name=radio>
+                                                <label class="form-check-label" for="mastercardcheck">
+                                                    <i class="fa fa-cc-mastercard"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gridRadios"
+                                                    id="visacheck" value="visacheck" name="radio">
+                                                <label class="form-check-label" for="visacheck">
+                                                    <i class="fa fa-cc-visa"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gridRadios"
+                                                    id="empirecheck" value="empirecheck" name=radio>
+                                                <label class="form-check-label" for="empirecheck">
+                                                    <i class="fa fa-empire"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gridRadios"
+                                                    id="rebelcheck" value="rebelcheck" name=radio>
+                                                <label class="form-check-label" for="rebelcheck">
+                                                    <i class="fa fa-rebel" }></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea class="form-control" id="message" name=message
+                                                rows="3"></textarea>
+                                            <span>add any notes here</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class=container>
+                                <div class=row>
+                                    <div class="col-1 offset-9">
+                                        <button type="button" class="btn btn-secondary">Cancel</button>
+                                    </div>
+                                    <div class="col-1">
+                                        <button type="submit" class="btn btn-primary" name="submit_button"
+                                            id="submit_button" value="Submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="validator.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
