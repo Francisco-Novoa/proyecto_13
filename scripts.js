@@ -8,7 +8,7 @@ function validar(e){
 
  ///get new elements
 
-    let cardv,cvcv,amountv,firstnamev,lastnamev,cityv,posrtcodev,messagev,radiov,preferencev;
+    var cardv,cvcv,amountv,firstnamev,lastnamev,cityv,postcodev,messagev,radiov,preferencev;
 
     let card = document.querySelector("#card");
     let cvc = document.querySelector("#CVC");
@@ -24,43 +24,46 @@ function validar(e){
     let radio4 = document.querySelector("#rebelcheck");
     let preference = document.querySelector("#preference");
 
-    function emptiness(elm,valuev){
+    function emptiness(elm){
         //validates emptiness
-        if(validator.isEmpty(elm.value)){
+        if(!validator.isAlpha(elm.value)||validator.isEmpty(elm.value)){
             elm.classList.add("bg-danger");
             document.querySelector("#alerts").classList.remove("invisible");
+            return false;
         }
         else{
         elm.classList.add("bg-success");
         elm.classList.remove("bg-danger");
-        valuev=true;
+        return true;
         }
     }
 
-    function emptiness_numeric(elm,valuev)
+    function emptiness_numeric(elm)
         //validates emptiness and if it is numeric
     {
         if (!validator.isNumeric(elm.value)||validator.isEmpty(elm.value)){
             elm.classList.add("bg-danger");
             document.querySelector("#alerts").classList.remove("invisible");
+            return false;
         }
         else{
             elm.classList.add("bg-success");
             elm.classList.remove("bg-danger");
+            return true;
         }
     }
 
     //basic empty validation
-    emptiness(cvc,cvcv);
-    emptiness(firstname,firstnamev);
-    emptiness(lastname,lastnamev);
-    emptiness(city,cityv);
-    emptiness(postcode,posrtcodev);
-    emptiness(message,messagev);
+    cvcv=emptiness(cvc);
+    firstnamev=emptiness(firstname);
+    lastnamev=emptiness(lastname);
+    cityv=emptiness(city);
+    postcodev=emptiness(postcode);
+    messagev=emptiness(message);
 
     //basic numeric validation
-    emptiness_numeric(amount,amountv);
-    emptiness_numeric(card,cardv);
+    amountv=emptiness_numeric(amount);
+    cardv=emptiness_numeric(card);
 
     //check dropdown validation
      if (preference.value == "0") {
@@ -74,18 +77,37 @@ function validar(e){
      }
 
     //check radio validation
-    if (!(radio1.checked)&&!(radio2.checked)&&!radio3.checked&&!radio4.checked) {
-        radio1.classList.add("bg-danger");
-        radio2.classList.add("bg-danger");
-        radio3.classList.add("bg-danger");
-        radio4.classList.add("bg-danger");
+    if (!radio1.checked&&!radio2.checked&&!radio3.checked&&!radio4.checked) {
+        radio1.classList.add("is-invalid");
+        radio2.classList.add("is-invalid");
+        radio3.classList.add("is-invalid");
+        radio4.classList.add("is-invalid");
         document.querySelector("#alerts").classList.remove("invisible");
     }
     else{
-        radio1.classList.remove("bg-danger");
-        radio2.classList.remove("bg-danger");
-        radio3.classList.remove("bg-danger");
-        radio4.classList.remove("bg-danger");
-    }
+        radio1.classList.remove("is-invalid");
+        radio2.classList.remove("is-invalid");
+        radio3.classList.remove("is-invalid");
+        radio4.classList.remove("is-invalid");
+        radiov=true;
+    }                                 
+    console.log(cardv);
+    console.log(cvcv);
+    console.log(amountv);
+    console.log(firstnamev);
+    console.log(lastnamev);
+    console.log(cityv);
+    console.log(postcodev);
+    console.log(messagev);
+    console.log(radiov);
+    console.log(preferencev);
+    console.log("final")
+ 
+
+    if(cardv===true && cvcv===true && amountv===true && firstnamev===true && lastnamev===true && cityv===true && postcodev===true && messagev===true && radiov===true && preferencev===true){
+        alert("enviado")
+        console.log("llegue al final!")
+        e.target.submit()
+        } 
     
 }
