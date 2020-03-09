@@ -90,24 +90,15 @@ function validar(e){
         radio3.classList.remove("is-invalid");
         radio4.classList.remove("is-invalid");
         radiov=true;
-    }                                 
-    console.log(cardv);
-    console.log(cvcv);
-    console.log(amountv);
-    console.log(firstnamev);
-    console.log(lastnamev);
-    console.log(cityv);
-    console.log(postcodev);
-    console.log(messagev);
-    console.log(radiov);
-    console.log(preferencev);
-    console.log("final")
+    }                              
  
 
     if(cardv===true && cvcv===true && amountv===true && firstnamev===true && lastnamev===true && cityv===true && postcodev===true && messagev===true && radiov===true && preferencev===true){
         alert("enviado")
-        console.log("llegue al final!")
+        
         e.target.submit()
         } 
-    
+ else{
+     
+ }   
 }
